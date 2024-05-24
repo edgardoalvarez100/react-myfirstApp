@@ -26,6 +26,7 @@ export const CounterScreen = () => {
                 icon="add-outline"
                 style={globalStyles.fab}
                 onPress={() => setCount(count + 1)}
+                onLongPress={() => setCount(0)}
 
             />
         </View >
