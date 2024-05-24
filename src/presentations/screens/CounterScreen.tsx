@@ -1,36 +1,33 @@
 import React, { useState } from 'react'
-import { StyleSheet, Text, View } from 'react-native'
-import { Button } from 'react-native-paper'
+import { Text, View } from 'react-native'
+import { Button, FAB } from 'react-native-paper'
+import { globalStyles } from '../theme/global.styles'
+
+import Icon from 'react-native-vector-icons/Ionicons'
 
 export const CounterScreen = () => {
 
-    const [count, setCount] = useState(2)
+    const [count, setCount] = useState(10)
 
     return (
-        <View style={styles.container}>
-            <Text style={styles.title}>{count}</Text>
+        <View style={globalStyles.container}>
+            <Text style={globalStyles.title}>{count}</Text>
+
 
             <Button
-                onPress={() => console.log('Pressed')}>
-                Incrementar 2
+                mode='contained'
+                onPress={() => setCount(count + 1)}
+                onLongPress={() => setCount(0)}
+            >
+                Incrementar
             </Button>
 
+            <FAB
+                icon="add-outline"
+                style={globalStyles.fab}
+                onPress={() => setCount(count + 1)}
 
+            />
         </View >
     )
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center'
-    },
-    title: {
-        fontSize: 80,
-        color: "black",
-        textAlign: "center",
-        fontWeight: '300'
-    },
-
-})
