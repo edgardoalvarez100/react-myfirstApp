@@ -1,5 +1,6 @@
 import React from 'react'
 import { View, StyleSheet } from 'react-native';
+import { FlexDirection } from './FlexDirection';
 
 export const Homeworkscreen = () => {
     return (
@@ -16,26 +17,32 @@ export const Homeworkscreen = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#28425B'
+        backgroundColor: '#28425B',
         //TODO: Tarea
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
 
     },
     box: {
         width: 100,
         height: 100,
-        padding: 10,
+        borderWidth: 10,
         borderColor: 'white'
     },
     purpleBox: {
-        backgroundColor: 'purple',
+        backgroundColor: '#5856D6',
+        // alignSelf: 'flex-end'
 
     },
     orangeBox: {
-        backgroundColor: '#c25211',
+        backgroundColor: '#F0A23B',
+        // marginTop: 100
+        // alignSelf: 'center'
 
     },
     blueBox: {
-        backgroundColor: '#113ac2',
+        backgroundColor: '#28C4D9',
 
     },
 })
